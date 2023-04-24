@@ -49,6 +49,9 @@
 
 ### Key Features <a name="key-features"></a>
 
+- **Quick and responsive UX**
+- **No repetion in code use**
+- **High performance**
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -122,8 +125,7 @@ Go to [🚀 Live Demo](#live-demo) to check it out.
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- improve slider responsiveness
-- Add more webpages such as Tickets Page and Schedule Page.
+- Add css
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
