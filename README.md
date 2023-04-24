@@ -55,7 +55,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-You can find a live demo in [HERE](https://lordksix.github.io/booksApp/).
+You can find a live demo in [HERE](https://lordksix.github.io/BooksApp/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
