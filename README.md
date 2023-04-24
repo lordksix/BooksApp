@@ -28,7 +28,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 [Portfolio] <a name="about-project"></a>
+# 📖 [Books Apps] <a name="about-project"></a>
 
 **Books App** is a project to highlight the use of wireframes.
 
