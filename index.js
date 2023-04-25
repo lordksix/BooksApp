@@ -25,3 +25,41 @@ add.addEventListener('click', (e) => {
 });
 
 window.addEventListener('load', BBClass.BookBinding.update(bookshelf, localStorageName, bookDivName));
+
+
+// single page application work
+
+const a = document.querySelectorAll('a')
+const section = document.querySelectorAll('section')
+
+a.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault()
+        
+        window.location.hash = link.getAttribute('href')
+
+        section.forEach(section => {
+            if (section.id === link.getAttribute('href').substring(1)) {
+                section.style.display = 'block'
+            } else {
+                section.style.display = 'none'
+            }
+        })
+    })
+})
+
+document.querySelector('section').style.display = 'block'
+
+window.addEventListener('hashchange', e => {
+    e.preventDefault()
+    const hash = window.location.hash
+    
+    section.forEach(section => {
+        if (section.id === hash.substring(1)) {
+            section.style.display = 'block'
+        } else {
+            section.style.display = 'none'
+        }
+    })
+
+})

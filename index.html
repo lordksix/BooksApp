@@ -9,21 +9,45 @@
   <title>Book Shelf</title>
 </head>
 <body>
-  <h1>Awesome Books</h1>
-  <section class="bookshelf">
+  <nav>
+    <h1>Awesome Books</h1>
+    <ul>
+      <li><a href="bookSection">List</a></li>
+      <li><a href="formSection">Add book</a></li>
+      <li><a href="contactSection">Contact</a></li>
+    </ul>
+  </nav>
+  <section id="bookSection">
+    <h2>All Awesome books</h2>
+    <div class="bookshelf">
+    </div>
   </section>
   <hr>
-  <h2>Add a new book</h2>
-  <form action="post" class="addbook">
-    <div class="title-book">
-      <label for="title">Title</label>
-      <input type="text" name="title" id="title" placeholder="Title">
-    </div>
-    <div class="author-book">
-      <label for="author">Author</label>
-      <input type="text" name="author" id="author" placeholder="Author">
-    </div>
-    <button id="add" type="submit">Add</button>
-  </form>
+  <section id="formSection">
+    <h2>Add a new book</h2>
+    <form action="post" class="addbook">
+      <div class="title-book">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" placeholder="Title">
+      </div>
+      <div class="author-book">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" placeholder="Author">
+      </div>
+      <button id="add" type="submit">Add</button>
+    </form>
+  </section>
+  <section id="contactSection">
+    <div>
+      <h2>Contact information</h2>
+      <p>Do have any questions or you just want to say "Hello"? </p>
+      <p>You can reach out to us!</p>
+      <ul>
+          <li>Our e-mail: mail@mail.com</li>
+          <li>Our phone number: 0043586534422</li>
+          <li>Our address: Streetname 22,84503 City, Country</li>
+      </ul>
+  </div>
+  </section>
 </body>
 </html>

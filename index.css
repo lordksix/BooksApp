@@ -89,3 +89,8 @@ label {
     justify-self: start;
   }
 }
+
+#formSection, #contactSection {
+  display: none;
+}
+
