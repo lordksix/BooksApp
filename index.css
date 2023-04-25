@@ -1,3 +1,91 @@
 * {
-  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding-inline: 10px;
+  padding-block: 30px;
+}
+
+h1,
+h2 {
+  margin-block: 10px;
+}
+
+.bookshelf {
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+  width: 70%;
+  max-width: 400px;
+  border: 2px solid black;
+  justify-items: center;
+}
+
+.book-row {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  text-align: center;
+}
+
+.book-row:nth-child(odd) {
+  background-color: gainsboro;
+}
+
+hr {
+  margin-inline: auto;
+  margin-block: 20px;
+  border-top: 3px solid #838080;
+  width: 20%;
+  max-width: 100px;
+}
+
+.addbook {
+  display: flex;
+  flex-flow: column;
+  gap: 15px;
+  max-width: 450px;
+  align-items: center;
+  margin-block: 10px;
+}
+
+.addbook input {
+  width: 70vw;
+  max-width: 250px;
+}
+
+button {
+  padding-inline: 10px;
+  padding-block: 5px;
+}
+
+.addbook button {
+  display: flex;
+  align-self: end;
+}
+
+label {
+  display: none;
+}
+
+@media screen and (min-width: 300px) {
+  .book-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+    padding: 10px;
+    column-gap: 30px;
+    align-items: center;
+  }
+
+  .book-row p {
+    justify-self: start;
+  }
 }
