@@ -5,13 +5,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./index.css">
-  <script src="index.js" defer></script>
+  <script src="index.js" type="module" defer></script>
   <title>Book Shelf</title>
 </head>
 <body>
   <h1>Awesome Books</h1>
   <section class="bookshelf">
   </section>
+  <hr>
+  <h2>Add a new book</h2>
   <form action="post" class="addbook">
     <div class="title-book">
       <label for="title">Title</label>
@@ -21,9 +23,7 @@
       <label for="author">Author</label>
       <input type="text" name="author" id="author" placeholder="Author">
     </div>
-    <div class="form-buttons">
-      <button id="add" type="submit">Add</button>
-    </div>
+    <button id="add" type="submit">Add</button>
   </form>
 </body>
 </html>

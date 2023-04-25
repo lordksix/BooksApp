@@ -52,6 +52,7 @@
 - **Quick and responsive UX**
 - **No repetion in code use**
 - **High performance**
+- **Implementation using JS CLASS**
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -125,7 +126,8 @@ Go to [🚀 Live Demo](#live-demo) to check it out.
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Add css
+- Add navbar
+- Add Contact info
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
