@@ -7,13 +7,13 @@ class BookBinding {
   }
 
   add(title, author, bookshelf, classes) {
-    const book = new renderModule.Book(title.value.trim(), author.value.trim());
     if (title.value.length && author.value.length) {
+      const book = new renderModule.Book(title.value.trim(), author.value.trim());
       this.awesomeBooks.push(book);
+      localStorage.setItem(this.localName, JSON.stringify(this.awesomeBooks));
+      const index = this.awesomeBooks.length - 1;
+      bookshelf.appendChild(renderModule.createBookDiv(title.value, author.value, index, classes));
     }
-    localStorage.setItem(this.localName, JSON.stringify(this.awesomeBooks));
-    const index = this.awesomeBooks.length - 1;
-    bookshelf.appendChild(renderModule.createBookDiv(title.value, author.value, index, classes));
     title.value = '';
     author.value = '';
   }
