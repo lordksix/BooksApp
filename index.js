@@ -15,7 +15,7 @@ bookshelf.addEventListener('click', (e) => {
     const bookRemove = document.querySelector(`[data-book="${index}"]`);
     bookBinding.removeBook(index, bookRemove, bookshelf);
     bookshelf.innerHTML = '';
-    BBClass.BookBinding.update(bookshelf, localStorageName);
+    BBClass.BookBinding.update(bookshelf, localStorageName, bookDivName);
   }
 });
 
