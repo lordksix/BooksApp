@@ -53,6 +53,7 @@
 - **No repetion in code use**
 - **High performance**
 - **Implementation using JS CLASS**
+- **SPA**
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
