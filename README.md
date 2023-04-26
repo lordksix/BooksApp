@@ -126,8 +126,7 @@ Go to [🚀 Live Demo](#live-demo) to check it out.
 ## 🔭 Future Features <a name="future-features"></a>
 
 Future changes:
-- Add navbar
-- Add Contact info
+- None for now
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
