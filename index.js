@@ -12,6 +12,25 @@ const section = document.querySelectorAll('section');
 
 const bookBinding = new BBClass.BookBinding(localStorageName);
 
+const sectionRender = (section) => {
+  const { hash } = window.location;
+  if (hash.length > 1) {
+    section.forEach((section) => {
+      if (section.id === hash.substring(1)) section.style.display = 'flex';
+      else section.style.display = 'none';
+    });
+    navItem.forEach((link) => {
+      if (link.getAttribute('href') === hash.substring(1)) link.classList.add('active');
+      else link.classList.remove('active');
+    });
+  }
+};
+
+const spaLoad = () => {
+  BBClass.BookBinding.update(bookshelf, localStorageName, bookDivName);
+  sectionRender(section);
+};
+
 bookshelf.addEventListener('click', (e) => {
   if (e.target.classList.contains('removeBtn')) {
     const index = parseInt(e.target.dataset.index, 10);
@@ -22,27 +41,6 @@ bookshelf.addEventListener('click', (e) => {
   }
 });
 
-add.addEventListener('click', (e) => {
-  e.preventDefault();
-  bookBinding.add(title, author, bookshelf, bookDivName);
-});
-
-window.addEventListener('load', BBClass.BookBinding.update(bookshelf, localStorageName, bookDivName));
-
-// single page application work
-
-const sectionRender = (section) => {
-  const { hash } = window.location;
-  section.forEach((section) => {
-    if (section.id === hash.substring(1)) section.style.display = 'flex';
-    else section.style.display = 'none';
-  });
-  navItem.forEach((link) => {
-    if (link.getAttribute('href') === hash.substring(1)) link.classList.add('active');
-    else link.classList.remove('active');
-  });
-};
-
 navItem.forEach((link) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
@@ -52,4 +50,9 @@ navItem.forEach((link) => {
   });
 });
 
-document.querySelector('section').style.display = 'flex';
+add.addEventListener('click', (e) => {
+  e.preventDefault();
+  bookBinding.add(title, author, bookshelf, bookDivName);
+});
+
+window.addEventListener('load', spaLoad);

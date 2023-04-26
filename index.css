@@ -14,12 +14,16 @@ body {
 }
 
 section {
-  display: flex;
+  display: none;
   flex-flow: column;
   align-items: center;
   padding-block: 30px;
   flex-grow: 1;
   justify-items: center;
+}
+
+#bookSection {
+  display: flex;
 }
 
 .div {
@@ -149,9 +153,4 @@ nav {
     justify-content: space-between;
     align-items: center;
   }
-}
-
-#formSection,
-#contactSection {
-  display: none;
 }
