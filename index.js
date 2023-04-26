@@ -7,6 +7,9 @@ const bookshelf = document.querySelector('.bookshelf');
 const localStorageName = 'Books';
 const bookDivName = 'book-row';
 
+const navItem = document.querySelectorAll('.nav a');
+const section = document.querySelectorAll('section');
+
 const bookBinding = new BBClass.BookBinding(localStorageName);
 
 bookshelf.addEventListener('click', (e) => {
@@ -26,40 +29,27 @@ add.addEventListener('click', (e) => {
 
 window.addEventListener('load', BBClass.BookBinding.update(bookshelf, localStorageName, bookDivName));
 
-
 // single page application work
 
-const a = document.querySelectorAll('a')
-const section = document.querySelectorAll('section')
+const sectionRender = (section) => {
+  const { hash } = window.location;
+  section.forEach((section) => {
+    if (section.id === hash.substring(1)) section.style.display = 'flex';
+    else section.style.display = 'none';
+  });
+  navItem.forEach((link) => {
+    if (link.getAttribute('href') === hash.substring(1)) link.classList.add('active');
+    else link.classList.remove('active');
+  });
+};
 
-a.forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault()
-        
-        window.location.hash = link.getAttribute('href')
+navItem.forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    link.classList.add('active');
+    window.location.hash = link.getAttribute('href');
+    sectionRender(section);
+  });
+});
 
-        section.forEach(section => {
-            if (section.id === link.getAttribute('href').substring(1)) {
-                section.style.display = 'block'
-            } else {
-                section.style.display = 'none'
-            }
-        })
-    })
-})
-
-document.querySelector('section').style.display = 'block'
-
-window.addEventListener('hashchange', e => {
-    e.preventDefault()
-    const hash = window.location.hash
-    
-    section.forEach(section => {
-        if (section.id === hash.substring(1)) {
-            section.style.display = 'block'
-        } else {
-            section.style.display = 'none'
-        }
-    })
-
-})
+document.querySelector('section').style.display = 'flex';

@@ -9,7 +9,7 @@ class BookBinding {
   add(title, author, bookshelf, classes) {
     if (title.value.length && author.value.length) {
       const book = new renderModule.Book(title.value.trim(), author.value.trim());
-      this.awesomeBooks.push(book);
+      this.awesomeBooks = this.awesomeBooks.concat(book);
       localStorage.setItem(this.localName, JSON.stringify(this.awesomeBooks));
       const index = this.awesomeBooks.length - 1;
       bookshelf.appendChild(renderModule.createBookDiv(title.value, author.value, index, classes));
@@ -19,7 +19,9 @@ class BookBinding {
   }
 
   removeBook(index, bookRemove, bookshelf) {
-    this.awesomeBooks.splice(index, 1);
+    const firstHalf = this.awesomeBooks.slice(0, index);
+    const secondHalf = this.awesomeBooks.slice(index + 1, this.awesomeBooks.length);
+    this.awesomeBooks = firstHalf.concat(secondHalf);
     localStorage.setItem(this.localName, JSON.stringify(this.awesomeBooks));
     bookshelf.removeChild(bookRemove);
   }
